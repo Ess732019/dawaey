@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دوائي: منبّه الدواء بصوت بيكلّمك</title>
+<meta name="description" content="تطبيق أندرويد بينبّهك بميعاد الدواء والتحاليل والأشعة والكشف بصوت واضح. بياناتك على تليفونك بس.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F1E9; --ink:#22342E; --soft:#5E6F68; --green:#1F5F54; --green-ink:#fff;
+  --line:#E2D8C3; --note-bg:#F5E6CC; --note-ink:#6B4A12;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14201C; --ink:#EEF2EF; --soft:#A9B8B1; --green:#4FA595; --green-ink:#0E1A16;
+         --line:#2C3D37; --note-bg:#3A2F17; --note-ink:#F1D9A6; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,Arial,sans-serif;line-height:1.85;font-size:18px}
+main{max-width:520px;margin:0 auto;padding:36px 22px 56px}
+h1{font-size:54px;line-height:1.1;margin:0 0 10px;color:var(--green);font-weight:700}
+h2{font-size:23px;margin:0 0 14px;font-weight:700}
+p{margin:0 0 12px}
+.lead{font-size:21px;color:var(--ink);margin-bottom:22px}
+section{padding:30px 0;border-top:1px solid var(--line)}
+section.first{border-top:0;padding-top:6px}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;border:0;cursor:pointer;
+  background:var(--green);color:var(--green-ink);font:inherit;font-weight:700;font-size:21px;
+  padding:17px 20px;border-radius:14px}
+.btn.alt{background:transparent;color:var(--green);border:2px solid var(--green)}
+.btn:focus-visible,.copy:focus-visible,input:focus-visible+label{outline:3px solid var(--ink);outline-offset:3px}
+.small{font-size:15px;color:var(--soft)}
+.note{background:var(--note-bg);color:var(--note-ink);padding:12px 16px;border-radius:12px;font-size:16px;margin:16px 0}
+ol{padding:0;margin:0;list-style:none;counter-reset:s}
+ol li{counter-increment:s;position:relative;padding:0 46px 16px 0}
+ol li::before{content:counter(s);position:absolute;right:0;top:2px;width:32px;height:32px;border-radius:50%;
+  background:var(--green);color:var(--green-ink);font-weight:700;text-align:center;line-height:32px;font-size:16px}
+.plans{display:grid;gap:10px;margin:6px 0 4px}
+.plans>div{position:relative}
+.plans input{position:absolute;opacity:0}
+.plans label{display:flex;justify-content:space-between;align-items:baseline;gap:12px;cursor:pointer;
+  padding:14px 18px;border:2px solid var(--line);border-radius:14px}
+.plans input:checked+label{border-color:var(--green);background:color-mix(in srgb,var(--green) 10%,transparent)}
+.plans b{font-size:24px;color:var(--green)}
+.pay{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  border:2px dashed var(--green);border-radius:14px;padding:14px 18px;margin:10px 0 16px}
+.num{font-size:28px;font-weight:700;letter-spacing:1px;direction:ltr;unicode-bidi:isolate}
+.copy{font:inherit;font-size:16px;background:transparent;color:var(--green);border:2px solid var(--green);
+  border-radius:10px;padding:6px 14px;cursor:pointer}
+details{border-top:1px solid var(--line);padding:12px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:8px 0 0;color:var(--soft);font-size:17px}
+#ios{display:none}
+footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+<body>
+<main>
+
+<section class="first">
+  <h1>دوائي</h1>
+  <p class="lead">ميعاد الدواء والتحاليل والأشعة والكشف، بصوت واضح بيكلّمك باسمك.</p>
+  <div id="ios" class="note">التطبيق شغّال على تليفونات أندرويد بس. افتح الصفحة دي من تليفون أندرويد.</div>
+  <a class="btn" id="dl" href="https://github.com/Ess732019/dawaey/releases/latest/download/dawaey.apk">حمّل دوائي لأندرويد</a>
+  <p class="small" style="margin-top:12px">مجاني لدواء واحد من غير أي كود. وبياناتك بتفضل على تليفونك بس.</p>
+  <p class="small">فحصنا ملف النسخة 1.1 على موقع VirusTotal (67 برنامج حماية): <b>0</b> برنامج اعتبره ضارًا. <a href="https://www.virustotal.com/gui/file/811ca6cffa913b074b7241cea4ed937718ea24719487a2bbf4a4c0808fd0fd5a" style="color:var(--green)">شوف تقرير الفحص</a></p>
+</section>
+
+<section>
+  <h2>إزاي تثبّته</h2>
+  <ol>
+    <li>دوس على زرار التحميل، وانتظر لحد ما الملف ينزل.</li>
+    <li>افتح الملف من إشعار التحميل، أو من تطبيق <b>ملفاتي</b> وفولدر <b>التنزيلات</b>.</li>
+    <li>لو ظهرت رسالة "التثبيت من مصادر غير معروفة"، دوس <b>الإعدادات</b> واسمح بالتثبيت من المصدر ده، وارجع.</li>
+    <li>لو ظهر تحذير من Google Play Protect، دوس <b>تثبيت على أي حال</b>. التحذير بيظهر لأن التطبيق مش على متجر جوجل لسه.</li>
+    <li>على التليفونات القديمة التثبيت ممكن ياخد كام دقيقة. استنى ومتقفلش.</li>
+    <li>افتح التطبيق، ووافق على إذن الإشعارات عشان التنبيه يوصلك.</li>
+  </ol>
+  <div class="note">مهم: افتح إرشادات البطارية جوه التطبيق (من تبويب الإعدادات) واتبعها، عشان تليفونك مايقفلش التنبيه وهو في الخلفية.</div>
+</section>
+
+<section>
+  <h2>المجاني والمفعّل</h2>
+  <p><b>المجاني:</b> دواء واحد بتنبيه كامل بالصوت.</p>
+  <p><b>بعد التفعيل:</b> أدوية بلا حد، والتحاليل والأشعة ومواعيد الدكتور والتقارير.</p>
+  <p class="small">التنبيهات اللي ضفتها قبل كده عمرها ما بتقف.</p>
+</section>
+
+<section id="buy">
+  <h2>الحصول على كود التفعيل</h2>
+  <p class="small" style="margin-bottom:8px">سعر الإطلاق. دفعة واحدة من غير اشتراك.</p>
+  <div class="plans" role="radiogroup" aria-label="الباقة">
+    <div><input type="radio" id="p1" name="plan" value="1" checked>
+      <label for="p1"><span>جهاز واحد</span><b>120 جنيه</b></label></div>
+    <div><input type="radio" id="p2" name="plan" value="2">
+      <label for="p2"><span>جهازين (مثلًا ماما وبابا)</span><b>180 جنيه</b></label></div>
+  </div>
+
+  <h2 style="margin-top:26px;font-size:20px">1. حوّل المبلغ على فودافون كاش</h2>
+  <div class="pay">
+    <span class="num" id="vf">01008343893</span>
+    <button class="copy" id="copy" type="button">نسخ</button>
+  </div>
+
+  <h2 style="font-size:20px">2. ابعت لنا صورة التحويل على واتساب</h2>
+  <a class="btn" id="wa" href="#">ابعت صورة التحويل واطلب الكود</a>
+  <p class="small" style="margin-top:12px">الكود بيوصلك على واتساب بعد التأكد من التحويل.</p>
+
+  <h2 style="margin-top:26px;font-size:20px">3. فعّل التطبيق</h2>
+  <p>في التطبيق افتح تبويب <b>الإعدادات</b> ودوس <b>أدخل كود التفعيل</b>، والصق الكود. محتاج نت للتفعيل مرة واحدة بس، وبعدها التطبيق بيشتغل من غير نت.</p>
+</section>
+
+<section>
+  <h2>أسئلة بتتكرر</h2>
+  <details><summary>غيّرت تليفوني، أعمل إيه؟</summary>
+    <p>من الإعدادات في التليفون القديم دوس <b>إلغاء تفعيل هذا الجهاز</b>، وبعدها فعّل الكود على التليفون الجديد.</p></details>
+  <details><summary>لو التليفون اتكسر أو ضاع؟</summary>
+    <p>ابعت لنا على واتساب نفس الرقم اللي طلبت منه الكود، ونفضّي لك مكانه.</p></details>
+  <details><summary>بياناتي رايحة فين؟</summary>
+    <p>أدويتك ومواعيدك مخزّنة على تليفونك بس. التطبيق بيكلّم السيرفر مرة واحدة وقت التفعيل عشان يتأكد من الكود، ومبيبعتش أي بيانات صحية.</p></details>
+  <details><summary>هل التطبيق آمن؟</summary>
+    <p>فحصنا الملف على VirusTotal وماظهرش أي برنامج حماية اعتبره ضارًا، وتقدر تشوف التقرير بنفسك من الرابط فوق. ده مؤشر مطمئن مش ضمان مطلق. وتحذير Google Play Protect وقت التثبيت بيظهر لأي تطبيق من برّه متجر جوجل، ومش معناه إن التطبيق فيه مشكلة.</p></details>
+  <details><summary>التطبيق بديل عن دكتور؟</summary>
+    <p>لأ. دوائي أداة تذكير بس. اتبع دايمًا نصيحة دكتورك وصيدلي، وماتعتمدش عليه وحده في أدوية حرجة.</p></details>
+</section>
+
+<footer>دوائي. أداة تذكير ومش بديل عن الاستشارة الطبية.</footer>
+</main>
+
+<script>
+(function(){
+  var NUMBER="201100885711";
+  var ua=navigator.userAgent||"";
+  if(/iPhone|iPad|iPod/i.test(ua)){document.getElementById("ios").style.display="block";}
+
+  var pharmacy=(new URLSearchParams(location.search).get("p")||"").replace(/[^\u0600-\u06FFa-zA-Z0-9 _-]/g,"").slice(0,40);
+
+  var plans={"1":"جهاز واحد (120 جنيه)","2":"جهازين (180 جنيه)"};
+  function chosen(){var r=document.querySelector('input[name="plan"]:checked');return r?r.value:"1";}
+  function buildLink(){
+    var t="عايز كود تفعيل لتطبيق دوائي.\nالباقة: "+plans[chosen()];
+    if(pharmacy){t+="\nمن صيدلية: "+pharmacy;}
+    t+="\nرقم الموبايل اللي حوّلت منه: ";
+    document.getElementById("wa").href="https://wa.me/"+NUMBER+"?text="+encodeURIComponent(t);
+  }
+  document.querySelectorAll('input[name="plan"]').forEach(function(r){r.addEventListener("change",buildLink);});
+  buildLink();
+
+  document.getElementById("copy").addEventListener("click",function(){
+    var btn=this, n=document.getElementById("vf").textContent;
+    function done(){btn.textContent="تم النسخ";setTimeout(function(){btn.textContent="نسخ";},2000);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(n).then(done);}
+    else{var i=document.createElement("input");i.value=n;document.body.appendChild(i);i.select();document.execCommand("copy");document.body.removeChild(i);done();}
+  });
+})();
+</script>
+</body>
+</html>
