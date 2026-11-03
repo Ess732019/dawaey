@@ -92,7 +92,7 @@ footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line);padding
 
 <section id="buy">
   <h2>الحصول على كود التفعيل</h2>
-  <p class="small" style="margin-bottom:8px">سعر الإطلاق. دفعة واحدة من غير اشتراك.</p>
+  <p class="small" style="margin-bottom:8px">سعر الإطلاق. دفعة واحدة من غير اشتراك. اختار الباقة اللي هتدفع ليها:</p>
   <div class="plans" role="radiogroup" aria-label="الباقة">
     <div><input type="radio" id="p1" name="plan" value="1" checked>
       <label for="p1"><span>جهاز واحد</span><b>120 جنيه</b></label></div>
@@ -105,10 +105,11 @@ footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line);padding
     <span class="num" id="vf">01035384364</span>
     <button class="copy" id="copy" type="button">نسخ</button>
   </div>
+  <p class="small">حوّل مبلغ الباقة اللي اخترتها بالظبط، من أي مكان.</p>
 
   <h2 style="font-size:20px">2. ابعت لنا صورة التحويل على واتساب</h2>
   <a class="btn" id="wa" href="#">ابعت صورة التحويل واطلب الكود</a>
-  <p class="small" style="margin-top:12px">الكود بيوصلك على واتساب بعد التأكد من التحويل.</p>
+  <p class="small" style="margin-top:12px">هتتفتح رسالة جاهزة فيها الباقة اللي اخترتها. دوس إرسال، وبعدها ابعت صورة التحويل. الكود بيوصلك على واتساب بعد التأكد من التحويل.</p>
 
   <h2 style="margin-top:26px;font-size:20px">3. فعّل التطبيق</h2>
   <p>في التطبيق افتح تبويب <b>الإعدادات</b> ودوس <b>أدخل كود التفعيل</b>، والصق الكود. محتاج نت للتفعيل مرة واحدة بس، وبعدها التطبيق بيشتغل من غير نت.</p>
@@ -119,11 +120,11 @@ footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line);padding
   <details><summary>غيّرت تليفوني، أعمل إيه؟</summary>
     <p>من الإعدادات في التليفون القديم دوس <b>إلغاء تفعيل هذا الجهاز</b>، وبعدها فعّل الكود على التليفون الجديد.</p></details>
   <details><summary>لو التليفون اتكسر أو ضاع؟</summary>
-    <p>ابعت لنا على واتساب نفس الرقم اللي طلبت منه الكود، ونفضّي لك مكانه.</p></details>
+    <p>ابعت لنا على واتساب، واكتب الرقم اللي طلبت منه الكود وصورة التحويل، ونفضّي لك مكانه.</p></details>
   <details><summary>بياناتي رايحة فين؟</summary>
     <p>أدويتك ومواعيدك مخزّنة على تليفونك بس. التطبيق بيكلّم السيرفر مرة واحدة وقت التفعيل عشان يتأكد من الكود، ومبيبعتش أي بيانات صحية.</p></details>
   <details><summary>هل التطبيق آمن؟</summary>
-    <p>فحصنا ملف النسخة الحالية على VirusTotal وماظهرش أي برنامج حماية اعتبره ضارًا، وتقدر تشوف التقرير بنفسك من الرابط فوق. ده مؤشر مطمئن مش ضمان مطلق. وتحذير Google Play Protect وقت التثبيت بيظهر لأي تطبيق من برّه متجر جوجل، ومش معناه إن التطبيق فيه مشكلة.</p></details>
+    <p>فحصنا الملف على VirusTotal وماظهرش أي برنامج حماية اعتبره ضارًا، وتقدر تشوف التقرير بنفسك من الرابط فوق. ده مؤشر مطمئن مش ضمان مطلق. وتحذير Google Play Protect وقت التثبيت بيظهر لأي تطبيق من برّه متجر جوجل، ومش معناه إن التطبيق فيه مشكلة.</p></details>
   <details><summary>التطبيق بديل عن دكتور؟</summary>
     <p>لأ. دوائي أداة تذكير بس. اتبع دايمًا نصيحة دكتورك وصيدلي، وماتعتمدش عليه وحده في أدوية حرجة.</p></details>
 </section>
@@ -142,9 +143,9 @@ footer{font-size:14px;color:var(--soft);border-top:1px solid var(--line);padding
   var plans={"1":"جهاز واحد (120 جنيه)","2":"جهازين (180 جنيه)"};
   function chosen(){var r=document.querySelector('input[name="plan"]:checked');return r?r.value:"1";}
   function buildLink(){
-    var t="عايز كود تفعيل لتطبيق دوائي.\nالباقة: "+plans[chosen()];
+    var t="السلام عليكم، دفعت وعايز كود تفعيل لتطبيق دوائي.\nالباقة: "+plans[chosen()];
     if(pharmacy){t+="\nمن صيدلية: "+pharmacy;}
-    t+="\nرقم الموبايل اللي حوّلت منه: ";
+    t+="\nهبعتلك صورة التحويل في الرسالة الجاية.";
     document.getElementById("wa").href="https://wa.me/"+NUMBER+"?text="+encodeURIComponent(t);
   }
   document.querySelectorAll('input[name="plan"]').forEach(function(r){r.addEventListener("change",buildLink);});
